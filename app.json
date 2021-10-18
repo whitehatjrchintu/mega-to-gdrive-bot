@@ -1,0 +1,40 @@
+{
+  "name": "Mega GDrive TG Bot",
+  "description": "A TG bot which can download files from mega.nz and upload the same file to GDrive.",
+  "repository": "https://github.com/whitehatjrchintu/meganzgdrivetgbot",
+  "logo": "https://avatars1.githubusercontent.com/u/34474300?s=280&v=4",
+  "keywords": ["mega.nz", "gdrive", "telegram", "heroku", "python", "pyrogram"],
+  "image": "heroku/python",
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "buildpacks": [{
+      "url": "heroku/python"
+    },
+    {
+    "url": "https://github.com/heroku/heroku-buildpack-apt"
+  }],
+  "env": {
+    "API_ID": {
+      "description": "App api_id from https://my.telegram.org"
+    },
+    "API_HASH": {
+      "description": "App api_hash from https://my.telegram.org"
+    },
+    "BOT_TOKEN": {
+      "description": "Bot token from https://t.me/BotFather"
+    },
+    "TELEGRAM_USER_ID": {
+      "description": "Get your telegram user_id from @userinfobot"
+    },
+    "MEGA.NZ_EMAIL": {
+      "description": "Create account on mega.nz"
+    },
+    "MEGA.NZ_PASSWORD": {
+      "description": "Create account on mega.nz"
+    }
+  }
+}

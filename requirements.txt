@@ -1,0 +1,10 @@
+httplib2==0.15.0
+beautifulsoup4
+pyrogram
+humanize
+TgCrypto
+requests
+datetime
+pydrive
+mega.py
+pytz

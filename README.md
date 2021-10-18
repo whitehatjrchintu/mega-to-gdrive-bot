@@ -1,6 +1,6 @@
 # Mega.nz to GDrive uploader
 
-With this telegram bot you can **download files from [mega.nz](https://mega.nz) and upload those files or telegram uploaded files to [GDrive](https://drive.google.com)**. **You can even upload telegram uploaded files to [mega.nz](https://mega.nz)**. This TG bot is **heroku** based. Now before you continue i recommend you to read [**Note**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#note-) section.
+With this telegram bot you can **download files from [mega.nz](https://mega.nz) and upload those files or telegram uploaded files to [GDrive](https://drive.google.com)**. **You can even upload telegram uploaded files to [mega.nz](https://mega.nz)**. This TG bot is **heroku** based. Now before you continue i recommend you to read [**Prerequisites**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#note-) section.
 
 ## Prerequisites:-
 <details>

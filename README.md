@@ -1,6 +1,14 @@
 # Mega.nz to GDrive uploader
 
-With this telegram bot you can **download files from [mega.nz](https://mega.nz) and upload those files or telegram uploaded files to [GDrive](https://drive.google.com)**. **You can even upload telegram uploaded files to [mega.nz](https://mega.nz)**. This TG bot is **heroku** based. Now before you continue i recommend you to read [**Prerequisites**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#Prerequisites-) section.
+With this telegram bot you can **download files from [mega.nz](https://mega.nz) and upload those files or telegram uploaded files to [GDrive](https://drive.google.com)**. **You can even upload telegram uploaded files to [mega.nz](https://mega.nz)**. This TG bot is **heroku** based. Now before you continue i recommend you to read [**Prerequisites**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#Prerequisites-) section and [**What this bot can do?**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#What-this-bot-can-do) section.
+
+## Can it download files over 5GiB?
+
+- Yes it can download. But for downloading files over 5GiB you have to wait for 5-6 hours or 10-12 hours after transfer quota exceeds. After completing 5-6 hours it will automatically download that file and after completing download it will ask you for uploading that file on GDrive. See proofs here:-
+
+screenshot 1 | screenshot 2
+--- | ---
+![photo_2021-10-20_15-46-43](https://user-images.githubusercontent.com/74552895/138076069-32ead8cf-9a9e-41c9-9c92-0b5cb9211d60.jpg) | ![photo_2021-10-20_15-46-51](https://user-images.githubusercontent.com/74552895/138076094-4c87987c-46e6-4a49-8b7d-494d5c56f10f.jpg)
 
 ## Prerequisites:-
 <details>
@@ -56,8 +64,16 @@ With this telegram bot you can **download files from [mega.nz](https://mega.nz) 
 </details>
 
 ## What this bot can do?
+<details>
+	<summary>
+		Full Details
+	</summary>
 
 - You can operate your [mega.nz](https://mega.nz) account with this bot.
+- You can list files that are uploaded on your [mega.nz](https://mega.nz) account. Just use **#ls** command.
+- You can remove any file from your [mega.nz](https://mega.nz) account. Just use **#rm file_name** command.
+- You can download your own [mega.nz](https://mega.nz) files. Just use **#get file_name** command.
+- You can use **#other** command for executing other [mega.nz commands](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md). Such as:- **#other mv old_name.mp4 new_name.mp4**, **#other cp orignal.mp4 copied.mp4** etc.
 - You can download other [mega.nz](https://mega.nz) files to telegram. Just send https://mega.nz/the_other_file_url it will send that file to your telegram.
 - You can upload [mega.nz](https://mega.nz) uploaded files to GDrive. Just send https://mega.nz/the_other_file_url it will ask you.
 
@@ -69,10 +85,34 @@ With this telegram bot you can **download files from [mega.nz](https://mega.nz) 
 	![forward](https://user-images.githubusercontent.com/74552895/137737105-a09261c4-89e0-4b1d-807c-46180cfd8fb8.PNG)
 
 - You can import other [mega.nz](https://mega.nz) files to your account. Use **#import https://mega.nz/the_other_file_url** command.
-- You can list files that are uploaded on your [mega.nz](https://mega.nz) account. Just use **#ls** command.
-- You can remove any file from your [mega.nz](https://mega.nz) account. Just use **#remove file_name** command.
-- You can download your own [mega.nz](https://mega.nz) files. Just use **#get file_name** command.
-- You can use **#other** command for executing other [mega.nz commands](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md).
+
+
+### Please note spaces are sensitive here so use double quotes if your file have spaces in its name. Example:- 
+
+|correct &check;|wrong &cross;|
+|---|---|
+|#rm "my video.mp4"|#rm my video.mp4|
+|#other mv "my video with spaces.mp4" my_video_without_spaces.mp4|#other mv my video with spaces.mp4 my_video_without_spaces.mp4|
+
+</details>
+
+<details>
+	<summary>
+		List of commands
+	</summary>
+	
+
+|commands|mean|
+|---|---|
+|#login|for login into mega.nz|
+|#ls|list files that are in your mega.nz account.|
+|#import mega.nz url|directly import another mega.nz file to your account. no download no upload for mega to mega.|
+|#get file_name|download your own mega.nz file and will ask you where to upload that file.|
+|#rm file_name|remove file from your mega.nz account.|
+|#other mega commands|execute other [mega.nz commands](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md) with the help of this command. mean operate your mega.nz account on telegram|
+|mega.co.nz or mega.nz|this will download file from mega.nz automatically and will ask you where to upload that file.|
+	
+</details>
 
 ## Todo:- 
 - After download share [mega.nz](https://mega.nz) folder as a zip. Currently it download folder but can't zip the folder.

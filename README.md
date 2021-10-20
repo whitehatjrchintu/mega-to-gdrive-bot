@@ -110,7 +110,7 @@ screenshot 1 | screenshot 2
 |#get file_name|download your own mega.nz file and will ask you where to upload that file.|
 |#rm file_name|remove file from your mega.nz account.|
 |#other mega commands|execute other [mega.nz commands](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md) with the help of this command. mean operate your mega.nz account on telegram|
-|mega.co.nz or mega.nz|this will download file from mega.nz automatically and will ask you where to upload that file.|
+|url of mega.co.nz or mega.nz|this will download file from mega.nz automatically and will ask you where to upload that file.|
 	
 </details>
 

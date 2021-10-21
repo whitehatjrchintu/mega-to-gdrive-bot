@@ -25,7 +25,7 @@ screenshot 1 | screenshot 2
   7. Create a telegram bot by using [Bot Father](https://t.me/botfather). Check [how to create bot in telegram](https://core.telegram.org/bots#3-how-do-i-create-a-bot). [Bot Father](https://t.me/botfather) will give you bot token save that token.
   8. Create **Google Drive API key** from your above created gmail account. Read [this article's](https://medium.com/analytics-vidhya/how-to-connect-google-drive-to-python-using-pydrive-9681b2a14f20) **Getting Your API Key** and **Saving Your Credentials** section for getting two file named **client_secrets.json** and **mycreds.txt**.
   9. Search **@chatid_echo_bot** in telegram (This bot is not mine. You can google how to get chat id in telegram.) and click start this will give you your **telegram user_id**.
-  10. So now you have saved **five** things:-
+  10. So now you have saved **six** things:-
 		- api_id
 		- api_hash
 		- bot_token

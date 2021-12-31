@@ -1,6 +1,6 @@
 # Mega.nz to GDrive uploader
 
-With this telegram bot you can **download files from [mega.nz](https://mega.nz) and upload those files or telegram uploaded files to [GDrive](https://drive.google.com)**. **You can even upload telegram uploaded files to [mega.nz](https://mega.nz)**. This TG bot is **heroku** based. Now before you continue i recommend you to read [**Prerequisites**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#Prerequisites-) section and [**What this bot can do?**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#What-this-bot-can-do) section.
+With this telegram bot you can **download files/folders from [mega.nz](https://mega.nz) and upload those files/folders or telegram uploaded files to [GDrive](https://drive.google.com)**. **You can even upload telegram uploaded files to [mega.nz](https://mega.nz)**. This TG bot is **heroku** based. Now before you continue i recommend you to read [**Prerequisites**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#Prerequisites-) section and [**What this bot can do?**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#What-this-bot-can-do) section.
 
 ## Can it download files over 5GiB?
 
@@ -75,16 +75,20 @@ screenshot 1 | screenshot 2
 - You can download your own [mega.nz](https://mega.nz) files. Just use **#get file_name** command.
 - You can use **#other** command for executing other [mega.nz commands](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md). Such as:- **#other mv old_name.mp4 new_name.mp4**, **#other cp orignal.mp4 copied.mp4** etc.
 - You can download other [mega.nz](https://mega.nz) files to telegram. Just send https://mega.nz/the_other_file_url it will send that file to your telegram.
+- You can download other [mega.nz](https://mega.nz) folders to telegram. Just send https://mega.nz/the_other_file_url it will send that folder's zip file to your telegram.
 - You can upload [mega.nz](https://mega.nz) uploaded files to GDrive. Just send https://mega.nz/the_other_file_url it will ask you.
-
-	![link](https://user-images.githubusercontent.com/74552895/137736579-1713d5e9-c5aa-4aaf-bf25-221515cac16d.PNG)
+- You can upload [mega.nz](https://mega.nz) uploaded folders to GDrive. Just send https://mega.nz/the_other_file_url it will ask you.
+	
+screenshot 1 | screenshot 2
+--- | ---
+![photo_2021-10-20_15-46-43](https://user-images.githubusercontent.com/74552895/137736579-1713d5e9-c5aa-4aaf-bf25-221515cac16d.PNG) | ![photo_2021-10-20_15-46-51](https://user-images.githubusercontent.com/74552895/147825235-274d0879-490e-4e31-8626-191c4fbb7593.PNG)
 
 - You can upload telegram uploaded files to [mega.nz](https://mega.nz). Just **forward** the telegram upload file to the bot.
 - You can upload telegram uploaded files to GDrive. Just **forward** the telegram upload file to the bot.
 
 	![forward](https://user-images.githubusercontent.com/74552895/137737105-a09261c4-89e0-4b1d-807c-46180cfd8fb8.PNG)
 
-- You can import other [mega.nz](https://mega.nz) files to your account. Use **#import https://mega.nz/the_other_file_url** command.
+- You can import other [mega.nz](https://mega.nz) files and folders to your account. Use **#import https://mega.nz/the_other_file_url** command.
 
 
 ### Please note spaces are sensitive here so use double quotes if your file have spaces in its name. Example:- 
@@ -110,7 +114,7 @@ screenshot 1 | screenshot 2
 |#get file_name|download your own mega.nz file and will ask you where to upload that file.|
 |#rm file_name|remove file from your mega.nz account.|
 |#other mega commands|execute other [mega.nz commands](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md) with the help of this command. mean operate your mega.nz account on telegram|
-|url of mega.co.nz or mega.nz|this will download file from mega.nz automatically and will ask you where to upload that file.|
+|url of mega.co.nz or mega.nz|this will download file from mega.nz automatically and will ask you where to upload that file. this will also download folder from mega.nz,then zip that folder and will ask you where to upload that zip file.|
 	
 </details>
 

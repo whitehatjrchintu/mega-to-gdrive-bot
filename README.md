@@ -79,7 +79,7 @@ screenshot 1 | screenshot 2
 - You can upload [mega.nz](https://mega.nz) uploaded files to GDrive. Just send https://mega.nz/the_other_file_url it will ask you.
 - You can upload [mega.nz](https://mega.nz) uploaded folders to GDrive. Just send https://mega.nz/the_other_file_url it will ask you.
 	
-screenshot 1 | screenshot 2
+where to upload mega.nz file? | mega.nz folder uploaded to telegram as zip file
 --- | ---
 ![photo_2021-10-20_15-46-43](https://user-images.githubusercontent.com/74552895/137736579-1713d5e9-c5aa-4aaf-bf25-221515cac16d.PNG) | ![photo_2021-10-20_15-46-51](https://user-images.githubusercontent.com/74552895/147825235-274d0879-490e-4e31-8626-191c4fbb7593.PNG)
 

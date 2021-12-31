@@ -118,8 +118,5 @@ screenshot 1 | screenshot 2
 	
 </details>
 
-## Todo:- 
-- After download share [mega.nz](https://mega.nz) folder as a zip. Currently it download folder but can't zip the folder.
-
 ### If you found any mistake or have any suggestion let me know i will correct/apply that.	
 ## Meant for educational purpose only. I am not responsible if mega or telegram block your account.

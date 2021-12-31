@@ -223,16 +223,31 @@ def noom(client: Client, callback_query: CallbackQuery):
             #uploading
             orig = mega_gett
             caption = mega_gett
-            document = (open(orig,'rb'))
-            upload_starttime = datetime.now(IST)
-            uploading_msg = app.send_message(coming_user_id, reply_to_message_id=reply_message_id, text="Uploading please wait.",parse_mode="html")
-            client.send_document(chat_id=coming_user_id,reply_to_message_id=reply_message_id,caption=caption,document=document)
-            time_taken_for_upload = (datetime.now(IST) - upload_starttime).seconds
-            print('Uploaded in',time_taken_for_upload,'seconds')
-            downloading_msg.delete()
-            uploading_msg.delete()
-            noom_msg.delete()
-            app.send_message(coming_user_id, reply_to_message_id=reply_message_id, text="Downloaded in " + str(time_taken_for_download) + " seconds. \nUploaded in " + str(time_taken_for_upload) + " seconds.")
+            check_dir_t = os.path.isdir(orig)
+            if check_dir_t == True:
+                folder_to_zip = subprocess.check_output("zip -r " + orig + ".zip " + orig,shell=True) #zip -r aa.zip aaaaaaaaa
+                origg = orig + ".zip"
+                document = (open(origg,'rb'))
+                upload_starttime = datetime.now(IST)
+                uploading_msg = app.send_message(coming_user_id, reply_to_message_id=reply_message_id, text="Uploading please wait.",parse_mode="html")
+                client.send_document(chat_id=coming_user_id,reply_to_message_id=reply_message_id,caption=caption,document=document)
+                time_taken_for_upload = (datetime.now(IST) - upload_starttime).seconds
+                print('Uploaded in',time_taken_for_upload,'seconds')
+                downloading_msg.delete()
+                uploading_msg.delete()
+                noom_msg.delete()
+                app.send_message(coming_user_id, reply_to_message_id=reply_message_id, text="Downloaded in " + str(time_taken_for_download) + " seconds. \nUploaded in " + str(time_taken_for_upload) + " seconds.")
+            else:
+                document = (open(orig,'rb'))
+                upload_starttime = datetime.now(IST)
+                uploading_msg = app.send_message(coming_user_id, reply_to_message_id=reply_message_id, text="Uploading please wait.",parse_mode="html")
+                client.send_document(chat_id=coming_user_id,reply_to_message_id=reply_message_id,caption=caption,document=document)
+                time_taken_for_upload = (datetime.now(IST) - upload_starttime).seconds
+                print('Uploaded in',time_taken_for_upload,'seconds')
+                downloading_msg.delete()
+                uploading_msg.delete()
+                noom_msg.delete()
+                app.send_message(coming_user_id, reply_to_message_id=reply_message_id, text="Downloaded in " + str(time_taken_for_download) + " seconds. \nUploaded in " + str(time_taken_for_upload) + " seconds.")
 
         noom_msg.delete()
 
@@ -285,13 +300,25 @@ def yesg_gdrive(client: Client, callback_query: CallbackQuery):
             IST = pytz.timezone('Asia/Kolkata')
             uploading_msg = app.send_message(chat_id=coming_user_id, reply_to_message_id=reply_message_id, text="Uploading " + '<b>' + mega_gett + '</b>' + " to Gdrive please wait.",parse_mode="html")
             orig = mega_gett
-            upload_starttime = datetime.now(IST)
-            file1 = drive.CreateFile()
-            file1.SetContentFile(orig)
-            file1.Upload()
-            link=file1['alternateLink']
-            time_taken_for_upload = (datetime.now(IST) - upload_starttime).seconds
-            print('Uploaded in',time_taken_for_upload,'seconds')
+            check_dir = os.path.isdir(orig)
+            if check_dir == True:
+                upload_starttime = datetime.now(IST)
+                folder_to_zip = subprocess.check_output("zip -r " + orig + ".zip " + orig,shell=True)
+                file1 = drive.CreateFile()
+                origg = orig + ".zip"
+                file1.SetContentFile(origg)
+                file1.Upload()
+                link=file1['alternateLink']
+                time_taken_for_upload = (datetime.now(IST) - upload_starttime).seconds
+                print('Uploaded in',time_taken_for_upload,'seconds')
+            else:
+                upload_starttime = datetime.now(IST)
+                file1 = drive.CreateFile()
+                file1.SetContentFile(orig)
+                file1.Upload()
+                link=file1['alternateLink']
+                time_taken_for_upload = (datetime.now(IST) - upload_starttime).seconds
+                print('Uploaded in',time_taken_for_upload,'seconds')
         
             #sending url
             uploading_msg.delete()

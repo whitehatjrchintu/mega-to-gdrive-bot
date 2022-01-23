@@ -4,7 +4,7 @@ from plugins import *
 from userbot import app
 from os import environ
 
-my_user_id = environ["TELEGRAM_USER_ID"]
+my_user_id = environ["2051438564"]
 
 @app.on_message(filters.command(["start"]))
 def start(client: Client, message: Message):

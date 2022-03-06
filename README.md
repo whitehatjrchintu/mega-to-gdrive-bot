@@ -1,6 +1,6 @@
 # Mega.nz to GDrive uploader
 
-With this telegram bot you can **download files/folders from [mega.nz](https://mega.nz) and upload those files/folders or telegram uploaded files to [GDrive](https://drive.google.com)**. **You can even upload telegram uploaded files to [mega.nz](https://mega.nz)**. This TG bot is **heroku** based. Now before you continue i recommend you to read [**Prerequisites**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#Prerequisites-) section and [**What this bot can do?**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#What-this-bot-can-do) section.
+With this telegram bot you can **download files/folders from [mega.nz](https://mega.nz) and upload those files/folders to [GDrive](https://drive.google.com)**. **You can even upload telegram uploaded files to [mega.nz](https://mega.nz) or [GDrive](https://drive.google.com)**. This TG bot is **heroku** based. Now before you continue i recommend you to read [**Prerequisites**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#Prerequisites-) section and [**What this bot can do?**](https://github.com/whitehatjrchintu/mega-to-gdrive-bot#What-this-bot-can-do) section.
 
 ## Can it download files over 5GiB?
 
@@ -85,8 +85,10 @@ where to upload mega.nz file? | mega.nz folder uploaded to telegram as zip file
 
 - You can upload telegram uploaded files to [mega.nz](https://mega.nz). Just **forward** the telegram upload file to the bot.
 - You can upload telegram uploaded files to GDrive. Just **forward** the telegram upload file to the bot.
-
-	![forward](https://user-images.githubusercontent.com/74552895/137737105-a09261c4-89e0-4b1d-807c-46180cfd8fb8.PNG)
+	
+	|    where to upload telegram uploaded file?    |
+	|---|
+	| <img width="100%" src="https://user-images.githubusercontent.com/71216298/156917678-4de7823b-77a8-468f-bb31-930312d4fb4e.PNG"> |
 
 - You can import other [mega.nz](https://mega.nz) files and folders to your account. Use **#import https://mega.nz/the_other_file_url** command.
 

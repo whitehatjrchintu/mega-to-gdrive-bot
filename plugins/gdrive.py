@@ -15,41 +15,37 @@ def gdrive_mega1(client: Client, message: Message):
     
     global reply_to_message_ids
     reply_to_message_ids = message.message_id
-    
-    #getting file id
-    file_id = None
+
+    #getting file name
     global file_name
     file_name = None
-    file_namee = None
     if message.media:
         if message.audio:
-            file_id = message.audio.file_id
             file_name = message.audio.file_name
-            file_namee = message.audio.file_name
-            #print(file_id)
         elif message.document:
-            file_id = message.document.file_id
             file_name = message.document.file_name
-            file_namee = message.document.file_name
-            #print(file_id)
-        elif message.photo:
-            file_id = message.photo.file_id
-            #print(file_id)
         elif message.video:
-            file_id = message.video.file_id
             file_name = message.video.file_name
-            file_namee = message.video.file_name
-            #print(file_id)    
-        what_msg = app.send_message(coming_user_id,f"Where you want to upload {file_name}?",reply_to_message_id=message.message_id,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(file_id,callback_data="gdrive"),InlineKeyboardButton(file_id,callback_data="mega")]]))
 
+    what_msg = app.send_message(coming_user_id,f"Where you want to upload {file_name}?",reply_to_message_id=message.message_id,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("gdrive",callback_data="gdrive"),InlineKeyboardButton("mega",callback_data="mega")]]))
+    
 @app.on_callback_query(filters.regex(r'gdrive'))
 def gdrive_answer(client: Client, callback_query: CallbackQuery):
+    #getting file id
+    file_id = None
+    if callback_query.message.reply_to_message.media:
+        if callback_query.message.reply_to_message.audio:
+            file_id = callback_query.message.reply_to_message.audio.file_id
+        elif callback_query.message.reply_to_message.document:
+            file_id = callback_query.message.reply_to_message.document.file_id
+        elif callback_query.message.reply_to_message.photo:
+            file_id = callback_query.message.reply_to_message.photo.file_id
+        elif callback_query.message.reply_to_message.video:
+            file_id = callback_query.message.reply_to_message.video.file_id
     msg = app.send_message(chat_id=coming_user_id, reply_to_message_id=reply_to_message_ids, text="Working on it.",parse_mode="html")
     try:
-        call_data = callback_query.data
+        call_data = file_id
         print(call_data)
-        call_dataa = callback_query.message.reply_markup.inline_keyboard[0][0].text
-        print(call_dataa)
         aa = callback_query.message.message_id
         callback_query.message.delete()
         if file_name is None:
@@ -62,7 +58,7 @@ def gdrive_answer(client: Client, callback_query: CallbackQuery):
             IST = pytz.timezone('Asia/Kolkata')
             download_starttime = datetime.now(IST)
             downloading_msg = app.send_message(chat_id=coming_user_id, reply_to_message_id=reply_to_message_ids, text="Downloading image please wait.",parse_mode="html")
-            download_file = app.download_media(call_dataa)
+            download_file = app.download_media(call_data)
             print(download_file)
             time_taken_for_download = (datetime.now(IST) - download_starttime).seconds
             print('Downloaded in',time_taken_for_download,'seconds')
@@ -95,7 +91,7 @@ def gdrive_answer(client: Client, callback_query: CallbackQuery):
             IST = pytz.timezone('Asia/Kolkata')
             download_starttime = datetime.now(IST)
             downloading_msg = app.send_message(chat_id=coming_user_id, reply_to_message_id=reply_to_message_ids, text="Downloading " + '<b>' + file_name + '</b>' + " please wait.",parse_mode="html")
-            download_file = app.download_media(call_dataa)
+            download_file = app.download_media(call_data)
             print(download_file)
             time_taken_for_download = (datetime.now(IST) - download_starttime).seconds
             print('Downloaded in',time_taken_for_download,'seconds')
@@ -127,12 +123,21 @@ def gdrive_answer(client: Client, callback_query: CallbackQuery):
 
 @app.on_callback_query(filters.regex(r'mega')) 
 def mega_answer(client: Client, callback_query: CallbackQuery):
+    #getting file id
+    file_id = None
+    if callback_query.message.reply_to_message.media:
+        if callback_query.message.reply_to_message.audio:
+            file_id = callback_query.message.reply_to_message.audio.file_id
+        elif callback_query.message.reply_to_message.document:
+            file_id = callback_query.message.reply_to_message.document.file_id
+        elif callback_query.message.reply_to_message.photo:
+            file_id = callback_query.message.reply_to_message.photo.file_id
+        elif callback_query.message.reply_to_message.video:
+            file_id = callback_query.message.reply_to_message.video.file_id
     msg = app.send_message(chat_id=coming_user_id, reply_to_message_id=reply_to_message_ids, text="Working on it.",parse_mode="html")
     try:
-        call_data = callback_query.data
+        call_data = file_id
         print(call_data)
-        call_dataa = callback_query.message.reply_markup.inline_keyboard[0][0].text
-        print(call_dataa)
         aa = callback_query.message.message_id
         callback_query.message.delete()   
         if file_name is None:
@@ -140,7 +145,7 @@ def mega_answer(client: Client, callback_query: CallbackQuery):
             IST = pytz.timezone('Asia/Kolkata')
             download_starttime = datetime.now(IST)
             downloading_msg = app.send_message(coming_user_id, reply_to_message_id=reply_to_message_ids, text="Downloading image please wait.",parse_mode="html")
-            download_file = app.download_media(call_dataa)
+            download_file = app.download_media(call_data)
             print(download_file)
             time_taken_for_download = (datetime.now(IST) - download_starttime).seconds
             print('Downloaded in',time_taken_for_download,'seconds')
@@ -164,7 +169,7 @@ def mega_answer(client: Client, callback_query: CallbackQuery):
             IST = pytz.timezone('Asia/Kolkata')
             download_starttime = datetime.now(IST)
             downloading_msg = app.send_message(coming_user_id, reply_to_message_id=reply_to_message_ids, text="Downloading " + '<b>' + file_name + '</b>' + " please wait.",parse_mode="html")
-            download_file = app.download_media(call_dataa)
+            download_file = app.download_media(call_data)
             print(download_file)
             time_taken_for_download = (datetime.now(IST) - download_starttime).seconds
             print('Downloaded in',time_taken_for_download,'seconds')
